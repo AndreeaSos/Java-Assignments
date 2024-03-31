@@ -9,7 +9,15 @@ public class AquariumLights {
     public void setStatus(boolean status) {
         this.status = status;
     }
-    public void turnOn(){
 
+    public boolean getStatus(){
+        return this.status;
+    }
+    public void turnOn(){
+        setStatus(true);
+    }
+
+    public void turnOff(){
+        setStatus(false);
     }
 }

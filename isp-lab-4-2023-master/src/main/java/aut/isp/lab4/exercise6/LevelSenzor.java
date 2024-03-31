@@ -1,6 +1,6 @@
-package aut.isp.lab4.exercise5;
+package aut.isp.lab4.exercise6;
 
-public class LevelSenzor extends Senzor{
+public class LevelSenzor extends Senzor {
 
     private float value;
 

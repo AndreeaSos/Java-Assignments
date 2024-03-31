@@ -14,10 +14,21 @@ public class AquariumController {
     private float feedingTime;
     private AquariumLights lights;
 
-    public AquariumController(String manufacturer, String model, FishFeeder feeder) {
+    private float lightsTime;
+
+    private boolean status;
+
+    public AquariumController(String manufacturer, String model) {
+        FishFeeder f1=new FishFeeder("Sandru","1");
+        AquariumLights l1=new AquariumLights();
+        l1.setStatus(true);
+        this.status=l1.getStatus();
         this.manufacturer = manufacturer;
         this.model = model;
-        this.feeder=feeder;
+    }
+
+    public boolean getStatus(){
+        return status;
     }
 
     public void setCurrentTime(float currentTime) {
@@ -26,6 +37,15 @@ public class AquariumController {
             System.out.println("it's feeding time!");
             feeder.feed();
         }
+        if(this.currentTime==8+this.lightsTime){
+            System.out.println("it's time to turn off lights");
+            lights.turnOff();
+        }
+    }
+
+    public void setLightsTime(float lightsTime) {
+        this.lightsTime = lightsTime;
+        lights.turnOn();
     }
 
 

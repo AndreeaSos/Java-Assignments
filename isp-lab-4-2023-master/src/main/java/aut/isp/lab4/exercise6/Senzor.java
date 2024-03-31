@@ -1,4 +1,4 @@
-package aut.isp.lab4.exercise5;
+package aut.isp.lab4.exercise6;
 
 public class Senzor {
     private String manufacturer;
